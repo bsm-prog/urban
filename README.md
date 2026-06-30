@@ -1,0 +1,1629 @@
+[index.html](https://github.com/user-attachments/files/29498049/index.html)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>어반교육컨설팅협동조합 | Urban Community Teaching &amp; Consulting</title>
+<meta name="description" content="시민의 일상이 도시를 바꾸는 힘, 어반교육컨설팅협동조합이 함께합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Noto Sans KR', sans-serif; color: #1F2937; background: #fff; line-height: 1.7; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ===================== VARIABLES ===================== */
+:root {
+  --navy: #1B3A6B;
+  --navy-dark: #122850;
+  --blue: #2563EB;
+  --blue-light: #3B82F6;
+  --sky: #EFF6FF;
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-400: #9CA3AF;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --white: #FFFFFF;
+  --shadow: 0 4px 24px rgba(27,58,107,0.10);
+  --shadow-sm: 0 2px 8px rgba(27,58,107,0.08);
+}
+
+/* ===================== NAVIGATION ===================== */
+#navbar {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 var(--gray-200);
+  transition: box-shadow 0.3s;
+}
+#navbar.scrolled { box-shadow: var(--shadow-sm); }
+.nav-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 68px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo .logo-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  overflow: hidden; flex-shrink: 0;
+}
+.nav-logo .logo-circle img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.nav-logo .logo-text { line-height: 1.25; }
+.nav-logo .logo-ko { font-size: 14px; font-weight: 700; color: var(--navy); letter-spacing: 0.08em; }
+.nav-logo .logo-en { font-size: 10px; font-weight: 400; color: var(--gray-600); letter-spacing: -0.03em; }
+
+.nav-menu { display: flex; gap: 4px; }
+.nav-menu a {
+  padding: 8px 16px; border-radius: 8px;
+  font-size: 15px; font-weight: 500; color: var(--gray-700);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.nav-menu a:hover, .nav-menu a.active {
+  background: var(--sky); color: var(--blue);
+}
+.nav-cta {
+  padding: 10px 20px; border-radius: 8px;
+  background: var(--navy); color: #fff;
+  font-size: 14px; font-weight: 600;
+  transition: background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.nav-cta:hover { background: var(--navy-dark); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: 0.3s; }
+
+.mobile-menu {
+  display: none; position: fixed; top: 68px; left: 0; width: 100%; z-index: 999;
+  background: #fff; border-top: 1px solid var(--gray-200);
+  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
+  box-shadow: var(--shadow);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  padding: 12px 16px; border-radius: 8px;
+  font-size: 16px; font-weight: 500; color: var(--gray-700);
+  cursor: pointer;
+}
+.mobile-menu a:hover { background: var(--sky); color: var(--blue); }
+
+/* ===================== HERO SECTION ===================== */
+#home {
+  min-height: 100vh;
+  background: linear-gradient(145deg, var(--navy) 0%, #1a4fa0 60%, #2563EB 100%);
+  display: flex; align-items: center; padding-top: 68px;
+  position: relative; overflow: hidden;
+}
+#home::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner {
+  max-width: 1160px; margin: 0 auto; padding: 80px 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-tag {
+  display: block;
+  color: rgba(255,255,255,0.85);
+  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
+  text-transform: uppercase; font-family: Arial, sans-serif;
+  white-space: nowrap; margin-bottom: 0;
+}
+.hero-title {
+  font-size: clamp(26px, 3.5vw, 42px); font-weight: 700;
+  color: #fff; line-height: 1.35; margin-bottom: 20px;
+  word-break: keep-all;
+}
+.hero-title .highlight {
+  color: #93C5FD;
+}
+.hero-desc {
+  font-size: 16px; color: rgba(255,255,255,0.82); margin-bottom: 36px;
+  line-height: 1.8; word-break: keep-all;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 28px; border-radius: 10px;
+  background: #fff; color: var(--navy);
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.btn-secondary {
+  padding: 14px 28px; border-radius: 10px;
+  background: transparent; color: #fff;
+  font-size: 15px; font-weight: 600;
+  border: 2px solid rgba(255,255,255,0.5);
+  cursor: pointer; transition: background 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+.hero-visual {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.hero-logo-wrap {
+  display: flex; justify-content: center; margin-bottom: 12px;
+}
+.hero-card {
+  background: rgba(255,255,255,0.13);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 12px; padding: 11px 18px;
+  display: flex; align-items: center;
+  transition: background 0.2s;
+}
+.hero-card:hover { background: rgba(255,255,255,0.2); }
+.hero-card-text {
+  color: #fff;
+  display: flex; align-items: center; gap: 14px; width: 100%;
+}
+.hero-card-text strong {
+  font-size: 17px; font-weight: 700; letter-spacing: -0.3px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.hero-card-text span {
+  font-size: 15px; color: rgba(255,255,255,0.88);
+  white-space: nowrap;
+}
+
+/* ===================== SECTION COMMON ===================== */
+.section { padding: 88px 24px; }
+.section-alt { background: var(--gray-50); }
+.section-inner { max-width: 1160px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-tag {
+  display: inline-block;
+  background: var(--sky); color: var(--blue);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(24px, 3vw, 36px); font-weight: 700;
+  color: var(--navy); margin-bottom: 16px; word-break: keep-all;
+}
+.section-desc {
+  font-size: 16px; color: var(--gray-600);
+  max-width: 600px; margin: 0 auto; word-break: keep-all;
+}
+
+/* ===================== SUB NAV (조합 소개) ===================== */
+.sub-nav {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  border-bottom: 2px solid var(--gray-200);
+  margin-bottom: 52px;
+}
+.sub-nav-btn {
+  padding: 12px 20px;
+  font-size: 15px; font-weight: 500; color: var(--gray-600);
+  background: none; border: none; cursor: pointer;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sub-nav-btn.active, .sub-nav-btn:hover {
+  color: var(--blue); border-bottom-color: var(--blue);
+}
+.sub-section { display: none; }
+.sub-section.active { display: block; }
+
+/* ===================== 인사말 ===================== */
+.greeting-wrap {
+  display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start;
+}
+.greeting-photo-box {
+  position: sticky; top: 100px;
+}
+.greeting-photo {
+  width: 100%; aspect-ratio: 3/4; border-radius: 20px;
+  object-fit: cover; box-shadow: var(--shadow);
+  background: var(--gray-100);
+}
+.photo-placeholder-lg {
+  width: 100%; aspect-ratio: 3/4; border-radius: 20px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 72px; color: rgba(255,255,255,0.5); font-weight: 700;
+  box-shadow: var(--shadow);
+}
+.greeting-badge {
+  margin-top: 16px; text-align: center;
+  background: var(--navy); color: #fff;
+  padding: 12px 20px; border-radius: 12px;
+}
+.greeting-badge .name { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+.greeting-badge .role { font-size: 13px; color: rgba(255,255,255,0.75); }
+
+.greeting-content {}
+.greeting-slogan {
+  font-size: clamp(18px, 2.5vw, 26px); font-weight: 700;
+  color: var(--navy); margin-bottom: 28px; line-height: 1.45;
+  word-break: keep-all;
+}
+.greeting-content p {
+  font-size: 16px; color: var(--gray-700);
+  margin-bottom: 20px; line-height: 1.9; word-break: keep-all;
+}
+.greeting-content p:last-child { margin-bottom: 0; }
+.greeting-sig {
+  margin-top: 40px; padding-top: 24px;
+  border-top: 1px solid var(--gray-200);
+  text-align: right;
+  font-size: 16px; color: var(--gray-600);
+}
+.greeting-sig strong { color: var(--navy); }
+
+/* ===================== 연혁 ===================== */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+  width: 2px; background: var(--gray-200);
+}
+.timeline-year {
+  font-size: 22px; font-weight: 700; color: var(--navy);
+  margin-bottom: 20px; margin-top: 40px; display: flex; align-items: center;
+}
+.timeline-year:first-child { margin-top: 0; }
+.timeline-year::before {
+  content: '';
+  position: absolute; left: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--blue); border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--blue);
+}
+.timeline-item {
+  position: relative; padding: 16px 20px;
+  background: #fff; border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  margin-bottom: 12px; box-shadow: var(--shadow-sm);
+}
+.timeline-item::before {
+  content: ''; position: absolute; left: -26px; top: 50%;
+  transform: translateY(-50%);
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gray-400); border: 2px solid #fff;
+}
+.timeline-date { font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 4px; }
+.timeline-content { font-size: 15px; color: var(--gray-700); word-break: keep-all; }
+.timeline-content .org { font-size: 13px; color: var(--gray-400); margin-top: 2px; }
+
+/* ===================== 조직도 (SVG) ===================== */
+.orgchart-svg-wrap {
+  width: 100%; max-width: 720px; margin: 0 auto; padding: 10px 0;
+}
+
+/* ===================== 오시는 길 ===================== */
+.location-wrap {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+}
+.map-embed {
+  border-radius: 16px; overflow: hidden;
+  box-shadow: var(--shadow); border: 1px solid var(--gray-200);
+  height: 360px;
+}
+.map-embed iframe { width: 100%; height: 100%; border: 0; }
+.location-info { padding: 8px 0; }
+.location-info h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+.info-item {
+  display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start;
+}
+.info-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--sky); color: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.info-text { }
+.info-text .label { font-size: 12px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.info-text .value { font-size: 15px; color: var(--gray-700); line-height: 1.5; }
+
+/* ===================== 사업 소개 ===================== */
+.biz-sub-section { display: none; }
+.biz-sub-section.active { display: block; }
+.experts-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin-bottom: 60px;
+}
+.expert-card {
+  background: #fff; border-radius: 20px; transition: none;
+  border: 1px solid var(--gray-200);
+  overflow: hidden; transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.expert-photo-wrap { position: relative; aspect-ratio: 1/1; overflow: hidden; cursor: pointer; }
+.expert-photo-wrap::after {
+  content: '전체보기 ▼'; position: absolute; inset: 0;
+  background: rgba(27,58,107,0.55); color: #fff;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s;
+}
+.expert-photo-wrap:hover::after { opacity: 1; }
+.expert-photo-wrap.open::after { content: '접기 ▲'; opacity: 1; background: rgba(27,58,107,0.7); }
+.expert-photo {
+  width: 100%; height: 100%; object-fit: cover;
+  background: var(--gray-100);
+}
+.photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 52px; font-weight: 700; color: rgba(255,255,255,0.7);
+}
+.expert-body { padding: 16px; }
+.expert-role {
+  font-size: 12px; font-weight: 600; color: var(--blue);
+  letter-spacing: 0.05em; margin-bottom: 4px;
+}
+.expert-name { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.expert-bio-short { list-style: none; margin-bottom: 12px; }
+.expert-bio-short li {
+  font-size: 11.5px; color: var(--gray-700); line-height: 1.6;
+  padding-left: 12px; position: relative;
+  letter-spacing: -0.03em; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.expert-bio-short li::before {
+  content: '·'; position: absolute; left: 0; color: var(--blue); font-weight: 700;
+}
+.expert-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.expert-tag {
+  font-size: 11px; font-weight: 600; color: var(--blue);
+  background: var(--sky); border-radius: 20px;
+  padding: 2px 8px; white-space: nowrap;
+}
+.expert-expand {
+  display: none; border-top: 1px solid var(--gray-200);
+  padding-top: 14px; margin-top: 4px;
+}
+.expand-section { margin-bottom: 14px; }
+.expand-section h4 {
+  font-size: 12px; font-weight: 700; color: var(--navy);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.expand-section ul { list-style: none; }
+.expand-section ul li {
+  font-size: 12.5px; color: var(--gray-600); line-height: 1.65;
+  padding-left: 12px; position: relative;
+}
+.expand-section ul li::before {
+  content: '–'; position: absolute; left: 0; color: var(--gray-400);
+}
+.expert-toggle-btn {
+  width: 100%; background: none; border: 1px solid var(--gray-200);
+  border-radius: 8px; padding: 7px; font-size: 12px; font-weight: 600;
+  color: var(--gray-600); cursor: pointer; transition: all 0.2s;
+}
+.expert-toggle-btn:hover { background: var(--sky); color: var(--blue); border-color: var(--blue-light); }
+
+/* Expert card color variants */
+.expert-card:nth-child(1) .photo-placeholder { background: linear-gradient(135deg, #1B3A6B, #2563EB); }
+.expert-card:nth-child(2) .photo-placeholder { background: linear-gradient(135deg, #065F46, #059669); }
+.expert-card:nth-child(3) .photo-placeholder { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+.expert-card:nth-child(4) .photo-placeholder { background: linear-gradient(135deg, #B45309, #F59E0B); }
+.expert-card:nth-child(5) .photo-placeholder { background: linear-gradient(135deg, #DC2626, #F87171); }
+.expert-card:nth-child(6) .photo-placeholder { background: linear-gradient(135deg, #0369A1, #38BDF8); }
+.expert-card:nth-child(7) .photo-placeholder { background: linear-gradient(135deg, #374151, #6B7280); }
+
+/* Service areas */
+.services-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.service-card {
+  background: #fff; border-radius: 20px; padding: 32px;
+  border: 1px solid var(--gray-200); box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.service-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.service-icon {
+  width: 56px; height: 56px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; margin-bottom: 20px;
+}
+.service-card:nth-child(1) .service-icon { background: #EFF6FF; }
+.service-card:nth-child(2) .service-icon { background: #F0FDF4; }
+.service-card:nth-child(3) .service-icon { background: #FFF7ED; }
+.service-card:nth-child(4) .service-icon { background: #F5F3FF; }
+.service-num {
+  font-size: 12px; font-weight: 700; color: var(--blue);
+  letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.service-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.service-desc { font-size: 14px; color: var(--gray-600); line-height: 1.8; margin-bottom: 16px; word-break: keep-all; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.service-tag {
+  padding: 4px 10px; border-radius: 6px;
+  font-size: 12px; font-weight: 500;
+  background: var(--gray-100); color: var(--gray-600);
+}
+
+/* ===================== 문의하기 ===================== */
+#contact { background: var(--sky); }
+.contact-wrap {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start;
+}
+.contact-info-box {}
+.contact-info-box h3 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.contact-info-box p { font-size: 15px; color: var(--gray-600); margin-bottom: 28px; line-height: 1.7; word-break: keep-all; }
+.contact-detail {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px; border-radius: 12px; background: #fff;
+  box-shadow: var(--shadow-sm); margin-bottom: 12px;
+}
+.contact-detail .cd-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--sky); color: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-detail .cd-text .cd-label { font-size: 12px; color: var(--gray-400); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 2px; }
+.contact-detail .cd-text .cd-value { font-size: 14px; color: var(--gray-700); word-break: break-all; }
+.contact-detail .cd-text .cd-value a { color: var(--blue); }
+
+.contact-form-box {
+  background: #fff; border-radius: 20px; padding: 36px;
+  box-shadow: var(--shadow);
+}
+.contact-form-box h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: 13px; font-weight: 600; color: var(--gray-700);
+  margin-bottom: 6px;
+}
+.form-group label .req { color: var(--blue); margin-left: 2px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 11px 14px; border-radius: 10px;
+  border: 1.5px solid var(--gray-200); font-family: inherit;
+  font-size: 15px; color: var(--gray-700);
+  background: var(--gray-50); transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--blue); background: #fff;
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.checkbox-group { display: flex; flex-direction: column; gap: 8px; }
+.checkbox-item { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.checkbox-item input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--blue); }
+.checkbox-item span { font-size: 14px; color: var(--gray-700); }
+.submit-btn {
+  width: 100%; padding: 14px;
+  background: var(--navy); color: #fff;
+  border: none; border-radius: 10px;
+  font-size: 16px; font-weight: 700; font-family: inherit;
+  cursor: pointer; transition: background 0.2s;
+  margin-top: 8px;
+}
+.submit-btn:hover { background: var(--navy-dark); }
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: #111827; color: rgba(255,255,255,0.6);
+  padding: 48px 24px;
+}
+.footer-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 2fr; gap: 48px;
+}
+.footer-brand .fb-logo { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.footer-brand .fb-en { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+.footer-brand p { font-size: 13px; line-height: 1.8; word-break: keep-all; }
+.footer-info {}
+.footer-info-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 32px;
+}
+.fi-item { font-size: 13px; line-height: 1.6; }
+.fi-item .fi-label { color: rgba(255,255,255,0.4); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1px; }
+.fi-item .fi-value { color: rgba(255,255,255,0.7); }
+.footer-bottom {
+  max-width: 1160px; margin: 32px auto 0;
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p { font-size: 12px; }
+
+/* ===================== SCROLL TO TOP ===================== */
+#scroll-top {
+  position: fixed; bottom: 32px; right: 32px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  border: none; cursor: pointer; font-size: 18px;
+  box-shadow: var(--shadow); opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: center; justify-content: center;
+}
+#scroll-top.visible { opacity: 1; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; padding: 60px 24px; }
+  .hero-visual { display: none; }
+  .greeting-wrap { grid-template-columns: 1fr; }
+  .greeting-photo-box { position: static; display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; }
+  .photo-placeholder-lg { aspect-ratio: 1/1; border-radius: 50%; width: 200px; height: 200px; }
+  .greeting-badge { margin-top: 0; }
+  .location-wrap { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-info-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-menu, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .section { padding: 64px 20px; }
+  .experts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 1024px) {
+  .experts-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .experts-grid { grid-template-columns: 1fr; }
+  .contact-form-box { padding: 24px; }
+  .sub-nav { overflow-x: auto; flex-wrap: nowrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="logo-circle"><img src="images/logo.png" alt="어반 로고"></div>
+      <div class="logo-text">
+        <div class="logo-ko">어반교육컨설팅협동조합</div>
+        <div class="logo-en">Urban Community Teaching &amp; Consulting</div>
+      </div>
+    </div>
+    <ul class="nav-menu">
+      <li><a onclick="scrollToSection('home')">홈</a></li>
+      <li><a onclick="scrollToSection('about')">조합 소개</a></li>
+      <li><a onclick="scrollToSection('business')">사업 소개</a></li>
+      <li><a onclick="scrollToSection('contact')">문의하기</a></li>
+    </ul>
+    <button class="nav-cta" onclick="scrollToSection('contact')">강의 의뢰하기</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a onclick="scrollToSection('home'); closeMenu()">홈</a>
+  <a onclick="scrollToSection('about'); closeMenu()">조합 소개</a>
+  <a onclick="scrollToSection('business'); closeMenu()">사업 소개</a>
+  <a onclick="scrollToSection('contact'); closeMenu()">문의하기</a>
+</div>
+
+<!-- ==================== HOME ==================== -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="hero-title">
+        시민의 일상이<br>도시를 바꾸는 힘,<br>
+        <span class="highlight">어반교육컨설팅협동조합</span>이<br>함께합니다
+      </h1>
+      <p class="hero-desc">
+        자주적·자립적·자치적인 조합 활동을 통해 공동체를 활성화하고,<br>
+        지속가능한 지역사회 발전을 이루는 현장 전문가 집단입니다.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="scrollToSection('business')">사업 소개 보기</button>
+        <button class="btn-secondary" onclick="scrollToSection('contact')">문의하기</button>
+      </div>
+      <div class="hero-tag" style="margin-top:18px;">URBAN COMMUNITY TEACHING &amp; CONSULTING</div>
+    </div>
+    <div class="hero-visual">
+      <!-- 어반 로고 -->
+      <div class="hero-logo-wrap">
+        <img src="images/logo.png" alt="어반교육컨설팅협동조합 로고" style="width:200px;height:200px;object-fit:contain;border-radius:50%;">
+      </div>
+
+      <!-- 사업 카드 4개 (아이콘 없음) -->
+      <div class="hero-card">
+        <div class="hero-card-text">
+          <strong>맞춤형 교육 및 강의</strong>
+          <span>도시재생 · 주민자치 · 마을공동체</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-text">
+          <strong>컨설팅 및 자문</strong>
+          <span>리빙랩 도시실험 · 주민조직화</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-text">
+          <strong>연구 용역 &amp; 아카이빙</strong>
+          <span>현황 조사 · 성과자료집 발간</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-text">
+          <strong>기획형 서비스</strong>
+          <span>연수 · 워크숍 · 선진지 견학</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">ABOUT US</div>
+      <h2 class="section-title">조합 소개</h2>
+      <p class="section-desc">도지재생, 사회적경제, 마을공동체 분야의 현장 전문가들이 만든 협동조합입니다.</p>
+    </div>
+
+    <div class="sub-nav" id="about-subnav">
+      <button class="sub-nav-btn active" onclick="showSubSection('greeting')">이사장 인사말</button>
+      <button class="sub-nav-btn" onclick="showSubSection('history')">연혁</button>
+      <button class="sub-nav-btn" onclick="showSubSection('org')">조직도</button>
+      <button class="sub-nav-btn" onclick="showSubSection('location')">오시는 길</button>
+    </div>
+
+    <!-- 인사말 -->
+    <div class="sub-section active" id="sub-greeting">
+      <div class="greeting-wrap">
+        <div class="greeting-photo-box">
+          <img class="greeting-photo" src="images/najihyun.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            alt="나지현 이사장">
+          <div class="photo-placeholder-lg" style="display:none">나</div>
+          <div class="greeting-badge">
+            <div class="name">나지현</div>
+            <div class="role">이사장 · Chief Director</div>
+          </div>
+        </div>
+        <div class="greeting-content">
+          <p class="greeting-slogan">"시민의 일상이 도시를 바꾸는 힘,<br>어반교육컨설팅협동조합이 함께합니다."</p>
+          <p>안녕하세요. 어반교육컨설팅협동조합 이사장 나지현입니다.</p>
+          <p>우리 동네, 우리 지역이 가진 진정한 힘은 그곳에 살아가는 '사람'과 그들이 이루는 '공동체'에 있습니다. 어반교육컨설팅협동조합은 자주적이고 자립적인 활동을 통해 공동체를 활성화하고, 지속가능한 지역사회 발전을 이루기 위해 뜻을 모은 현장 전문가들이 설립한 기관입니다.</p>
+          <p>복잡하고 빠르게 변화하는 현대 사회에서, 지역의 문제는 더 이상 외부의 누군가가 단번에 해결해 줄 수 없습니다. 시민 스스로 일상의 주체가 되어 과제를 정의하고 해결 방안을 모색하는 '도시실험'의 과정, 그리고 사람 중심의 '사회적경제'의 역할이 그 어느 때보다 중요해졌습니다.</p>
+          <p>저희 조합은 도지재생, 사회적경제, 마을공동체, 여성, 노동, 역사, 사회복지 등 다양한 분야에서 오랜 시간 현장과 호흡해 온 전문 이사진들로 구성되어 있습니다. 수요자 맞춤형 교육부터 마을 갈등관리, 주민 역량강화, 그리고 지역 자원을 연결하는 혁신적인 기획에 이르기까지 지역사회가 필요로 하는 최적의 컨설팅과 교육을 제공합니다.</p>
+          <p>더 나은 내일을 꿈꾸는 주민 여러분, 그리고 지역의 변화를 이끌어가는 활동가 여러분. 어반교육컨설팅협동조합이 여러분의 든든한 파트너로서 한 걸음 더 가까이에서 동행하겠습니다.</p>
+          <p>감사합니다.</p>
+          <div class="greeting-sig">어반교육컨설팅협동조합 이사장 <strong>나 지 현</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 연혁 -->
+    <div class="sub-section" id="sub-history">
+      <div class="timeline">
+        <div class="timeline-year">2026년</div>
+        <div class="timeline-item">
+          <div class="timeline-date">06월 ~ 11월</div>
+          <div class="timeline-content">남동구청 2026년 행복가꿈사업 공동체활성화 지원용역<div class="org">남동구청</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">04월 ~ 11월</div>
+          <div class="timeline-content">2026 &lt;꽤 쓸모있는 도시실험&gt; 컨설팅 및 성과자료집 제작<div class="org">부평구문화재단</div></div>
+        </div>
+
+        <div class="timeline-year">2025년</div>
+        <div class="timeline-item">
+          <div class="timeline-date">08월 ~ 11월</div>
+          <div class="timeline-content">인천시 마을관리협동조합 협의회 자료집 발간<div class="org">인천광역시 도시재생지원센터</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">04월 ~ 11월</div>
+          <div class="timeline-content">2025 &lt;꽤 쓸모 있는 도시실험&gt; 컨설팅<div class="org">부평구문화재단</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">01월 02일</div>
+          <div class="timeline-content">법인 사업자등록 및 업무 개시</div>
+        </div>
+
+        <div class="timeline-year">2024년</div>
+        <div class="timeline-item">
+          <div class="timeline-date">12월 12일</div>
+          <div class="timeline-content">법인 설립 등기</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">11월 18일</div>
+          <div class="timeline-content">협동조합 설립 신고 완료<div class="org">인천광역시</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">10월 25일</div>
+          <div class="timeline-content">어반교육컨설팅협동조합 창립총회 개최</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 조직도 -->
+    <div class="sub-section" id="sub-org">
+      <div class="orgchart-svg-wrap">
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Noto Sans KR',sans-serif;">
+
+          <!-- ── 연결선 (박스보다 먼저 그려서 박스가 위에 오도록) ── -->
+          <g stroke="#64748b" stroke-width="2" fill="none">
+            <!-- 이사장 하단 → 감사 분기점(y=130) → 팀 분기점(y=192) -->
+            <line x1="350" y1="75" x2="350" y2="192"/>
+            <!-- 감사 수평 분기선 (y=130 중간에서 오른쪽으로) -->
+            <line x1="350" y1="130" x2="495" y2="130"/>
+            <!-- 팀 수평 분기선 -->
+            <line x1="205" y1="192" x2="510" y2="192"/>
+            <!-- 전략기획팀 수직 -->
+            <line x1="205" y1="192" x2="205" y2="212"/>
+            <!-- 전략추진팀 수직 -->
+            <line x1="510" y1="192" x2="510" y2="212"/>
+            <!-- 기획팀 하단 → 멤버 분기점(y=282) -->
+            <line x1="205" y1="252" x2="205" y2="282"/>
+            <!-- 기획팀 멤버 수평 -->
+            <line x1="163" y1="282" x2="247" y2="282"/>
+            <!-- 기획팀 멤버 수직 -->
+            <line x1="163" y1="282" x2="163" y2="315"/>
+            <line x1="247" y1="282" x2="247" y2="315"/>
+            <!-- 추진팀 하단 → 멤버 분기점(y=282) -->
+            <line x1="510" y1="252" x2="510" y2="282"/>
+            <!-- 추진팀 멤버 수평 -->
+            <line x1="393" y1="282" x2="627" y2="282"/>
+            <!-- 추진팀 멤버 수직 -->
+            <line x1="393" y1="282" x2="393" y2="315"/>
+            <line x1="471" y1="282" x2="471" y2="315"/>
+            <line x1="549" y1="282" x2="549" y2="315"/>
+            <line x1="627" y1="282" x2="627" y2="315"/>
+          </g>
+
+          <!-- ── 이사장 ── -->
+          <rect x="285" y="20" width="130" height="55" rx="8" fill="#1B3A6B"/>
+          <text x="350" y="42" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12" font-weight="600">이 사 장</text>
+          <text x="350" y="64" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">나지현</text>
+
+          <!-- ── 감사 ── -->
+          <rect x="495" y="111" width="88" height="38" rx="7" fill="#fff" stroke="#1B3A6B" stroke-width="2"/>
+          <text x="539" y="135" text-anchor="middle" fill="#1B3A6B" font-size="14" font-weight="700">감 사</text>
+
+          <!-- ── 전략기획팀 ── -->
+          <rect x="145" y="212" width="120" height="40" rx="7" fill="#2563EB"/>
+          <text x="205" y="237" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">전략기획팀</text>
+
+          <!-- ── 전략추진팀 ── -->
+          <rect x="450" y="212" width="120" height="40" rx="7" fill="#2563EB"/>
+          <text x="510" y="237" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">전략추진팀</text>
+
+          <!-- ── 기획팀 멤버 ── -->
+          <rect x="125" y="315" width="76" height="36" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+          <text x="163" y="338" text-anchor="middle" fill="#1B3A6B" font-size="13" font-weight="600">이충현</text>
+
+          <rect x="209" y="315" width="76" height="36" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+          <text x="247" y="338" text-anchor="middle" fill="#1B3A6B" font-size="13" font-weight="600">전지혜</text>
+
+          <!-- ── 추진팀 멤버 ── -->
+          <rect x="355" y="315" width="76" height="36" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+          <text x="393" y="338" text-anchor="middle" fill="#1B3A6B" font-size="13" font-weight="600">김희주</text>
+
+          <rect x="433" y="315" width="76" height="36" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+          <text x="471" y="338" text-anchor="middle" fill="#1B3A6B" font-size="13" font-weight="600">신인권</text>
+
+          <rect x="511" y="315" width="76" height="36" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+          <text x="549" y="338" text-anchor="middle" fill="#1B3A6B" font-size="13" font-weight="600">이용우</text>
+
+          <rect x="589" y="315" width="76" height="36" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+          <text x="627" y="338" text-anchor="middle" fill="#1B3A6B" font-size="13" font-weight="600">박흥석</text>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- 오시는 길 -->
+    <div class="sub-section" id="sub-location">
+      <div class="location-wrap">
+        <div class="map-embed">
+          <iframe
+            src="https://maps.google.com/maps?q=인천광역시+부평구+수변로+56&output=embed&hl=ko&z=16"
+            allowfullscreen loading="lazy" title="어반교육컨설팅협동조합 위치">
+          </iframe>
+        </div>
+        <div class="location-info">
+          <h3>찾아오시는 길</h3>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+              <div class="label">주소</div>
+              <div class="value">인천광역시 부평구 수변로 56<br>부평사회적경제마을센터 1층 코워킹룸 102호</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🏢</div>
+            <div class="info-text">
+              <div class="label">건물 안내</div>
+              <div class="value">부평사회적경제마을센터 내 위치<br>코워킹룸 102호</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-text">
+              <div class="label">이메일</div>
+              <div class="value"><a href="mailto:utnc1025@gmail.com">utnc1025@gmail.com</a></div>
+              <div style="font-size:12px;color:var(--gray-400);margin-top:3px;">문의는 메일로 부탁드립니다</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🚌</div>
+            <div class="info-text">
+              <div class="label">교통 안내</div>
+              <div class="value">부평구 수변로 인근 대중교통 이용</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BUSINESS ==================== -->
+<section id="business" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">OUR BUSINESS</div>
+      <h2 class="section-title">전문가 및 사업 소개</h2>
+      <p class="section-desc">각 분야의 현장 전문가들이 지역사회와 함께 합니다.</p>
+    </div>
+
+    <!-- 사업 서브 탭 -->
+    <div class="sub-nav" id="biz-subnav">
+      <button class="sub-nav-btn active" onclick="showBizSection('experts')">강사 및 컨설턴트 소개</button>
+      <button class="sub-nav-btn" onclick="showBizSection('services')">사업소개</button>
+    </div>
+
+    <!-- 강사 및 컨설턴트 소개 -->
+    <div class="biz-sub-section active" id="biz-experts">
+    <div class="experts-grid">
+
+      <!-- 나지현 -->
+      <div class="expert-card">
+        <div class="expert-photo-wrap" onclick="toggleExpert(this)">
+          <img class="expert-photo" src="images/najihyun.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="나지현">
+          <div class="photo-placeholder" style="display:none">나</div>
+        </div>
+        <div class="expert-body">
+          <div class="expert-role">이사장</div>
+          <div class="expert-name">나지현</div>
+          <ul class="expert-bio-short">
+            <li>現 60+기후행동 공동대표</li>
+            <li>現 일하는여성아카데미 이사</li>
+            <li>現 인천여성노동자회 이사</li>
+            <li>現 성평등노동교육센터 강사</li>
+            <li>前 사무금융 우분투재단 사무처장</li>
+          </ul>
+          <div class="expert-tags">
+            <span class="expert-tag">#여성</span><span class="expert-tag">#노동</span><span class="expert-tag">#인권</span><span class="expert-tag">#기후</span><span class="expert-tag">#양성평등</span><span class="expert-tag">#역사</span>
+          </div>
+          <div class="expert-expand">
+            <div class="expand-section">
+              <h4>전체 약력</h4>
+              <ul>
+                <li>前 인천여성가족재단 이사</li>
+                <li>前 전국여성노동조합 위원장</li>
+                <li>前 인천도시산업선교회 자료실장</li>
+                <li>前 청년재단 운영위원</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>강의 경력</h4>
+              <ul>
+                <li>2013~현재 리더십·기후·여성·노동운동사</li>
+                <li>2007~2016 양성평등·감마컨설팅·철학·직업인의자세·소통</li>
+                <li>1999~2006 정세·노동·여성</li>
+                <li>1995~1999 강사훈련교육·정세</li>
+                <li>1989~1995 역사·경제 강의</li>
+              </ul>
+            </div>
+          </div>
+          <button class="expert-toggle-btn" onclick="toggleExpert(this.closest('.expert-card').querySelector('.expert-photo-wrap'))">상세보기 ▼</button>
+        </div>
+      </div>
+
+      <!-- 이충현 -->
+      <div class="expert-card">
+        <div class="expert-photo-wrap" onclick="toggleExpert(this)">
+          <img class="expert-photo" src="images/leechoongyhyun.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="이충현">
+          <div class="photo-placeholder" style="display:none">이</div>
+        </div>
+        <div class="expert-body">
+          <div class="expert-role">이사 겸 감사</div>
+          <div class="expert-name">이충현</div>
+          <ul class="expert-bio-short">
+            <li>現 여럿이하는동네야놀자 대표</li>
+            <li>現 사)우리동네희망마을 운영이사</li>
+            <li>前 천연충현도시재생지원센터 센터장</li>
+            <li>前 한국주민운동교육원 대표</li>
+            <li>前 부평사회적경제마을센터 센터장</li>
+          </ul>
+          <div class="expert-tags">
+            <span class="expert-tag">#주민조직화</span><span class="expert-tag">#도시재생</span><span class="expert-tag">#사회적경제</span><span class="expert-tag">#주민자치회</span><span class="expert-tag">#마을공동체</span>
+          </div>
+          <div class="expert-expand">
+            <div class="expand-section">
+              <h4>전체 약력</h4>
+              <ul>
+                <li>前 실업극복인천본부 사무처장</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>강의 경력</h4>
+              <ul>
+                <li>2018~ 도시재생 분야 (도시재생 이해, 거버넌스, 주민조직운영, 활동가 교육)</li>
+                <li>2011~ 사회적경제 분야 (사회적경제 이해, 조직운영, 리더십, 소통)</li>
+                <li>2006~ 주민조직화 분야 (주민조직, 조직운영, 갈등과 소통, 리더십)</li>
+                <li>워크숍 진행 / 조직화 슈퍼비젼</li>
+              </ul>
+            </div>
+          </div>
+          <button class="expert-toggle-btn" onclick="toggleExpert(this.closest('.expert-card').querySelector('.expert-photo-wrap'))">상세보기 ▼</button>
+        </div>
+      </div>
+
+      <!-- 김희주 -->
+      <div class="expert-card">
+        <div class="expert-photo-wrap" onclick="toggleExpert(this)">
+          <img class="expert-photo" src="images/kimheejoo.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="김희주">
+          <div class="photo-placeholder" style="display:none">김</div>
+        </div>
+        <div class="expert-body">
+          <div class="expert-role">이사</div>
+          <div class="expert-name">김희주</div>
+          <ul class="expert-bio-short">
+            <li>現 인천역사교육연구소 소장</li>
+            <li>現 하늘땅역사교육 대표</li>
+            <li>現 인천시민교수</li>
+            <li>前 남구의제21 문학산분과위원장</li>
+            <li>前 인천시도로명위원회 위원</li>
+          </ul>
+          <div class="expert-tags">
+            <span class="expert-tag">#마을역사</span><span class="expert-tag">#한국사</span><span class="expert-tag">#세계사</span><span class="expert-tag">#인천사</span><span class="expert-tag">#문화유산</span><span class="expert-tag">#역사탐방</span>
+          </div>
+          <div class="expert-expand">
+            <div class="expand-section">
+              <h4>전체 약력</h4>
+              <ul>
+                <li>前 연수구사 편찬위원 및 집필위원</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>강의 경력</h4>
+              <ul>
+                <li>2000~ 한국사·세계사·인천사·문화유산 강의·역사탐방</li>
+                <li>2008~ 역사논술지도자 양성과정</li>
+                <li>2012~ 문화유산해설사 양성과정</li>
+                <li>2019~ 찾아가는 역사교실·지역화교육 (초·중등)</li>
+              </ul>
+            </div>
+          </div>
+          <button class="expert-toggle-btn" onclick="toggleExpert(this.closest('.expert-card').querySelector('.expert-photo-wrap'))">상세보기 ▼</button>
+        </div>
+      </div>
+
+      <!-- 신인권 -->
+      <div class="expert-card">
+        <div class="expert-photo-wrap" onclick="toggleExpert(this)">
+          <img class="expert-photo" src="images/shininkonn.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="신인권">
+          <div class="photo-placeholder" style="display:none">신</div>
+        </div>
+        <div class="expert-body">
+          <div class="expert-role">이사 겸 감사</div>
+          <div class="expert-name">신인권</div>
+          <ul class="expert-bio-short">
+            <li>現 인천서구지역자활센터 실장</li>
+            <li>前 인천희망지역자활센터 실장</li>
+            <li>前 인천희망지역자활센터 팀장</li>
+          </ul>
+          <div class="expert-tags">
+            <span class="expert-tag">#사회복지</span><span class="expert-tag">#자활사업</span><span class="expert-tag">#문서작성법</span><span class="expert-tag">#행정사무</span><span class="expert-tag">#재무회계</span><span class="expert-tag">#창업</span>
+          </div>
+          <div class="expert-expand">
+            <div class="expand-section">
+              <h4>강의 경력</h4>
+              <ul>
+                <li>2024. 공모사업분야 문서작성 실무교육</li>
+                <li>2021. 도시재생대학 집수리분야 교육</li>
+                <li>2019. 자활종사자 실무교육 (행정사무 및 재무회계)</li>
+                <li>2019. 창업아이템 3DS프로그램 강의</li>
+              </ul>
+            </div>
+          </div>
+          <button class="expert-toggle-btn" onclick="toggleExpert(this.closest('.expert-card').querySelector('.expert-photo-wrap'))">상세보기 ▼</button>
+        </div>
+      </div>
+
+      <!-- 전지혜 -->
+      <div class="expert-card">
+        <div class="expert-photo-wrap" onclick="toggleExpert(this)">
+          <img class="expert-photo" src="images/jeonjihye.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="전지혜">
+          <div class="photo-placeholder" style="display:none">전</div>
+        </div>
+        <div class="expert-body">
+          <div class="expert-role">이사</div>
+          <div class="expert-name">전지혜</div>
+          <ul class="expert-bio-short">
+            <li>現 경기도의회 정책지원관</li>
+            <li>前 인천서구지역자활센터 팀장</li>
+            <li>前 부평사회적경제마을센터 사무국장</li>
+            <li>前 드림투게더 대외협력부장</li>
+            <li>前 구로어르신돌봄지원센터 팀장</li>
+          </ul>
+          <div class="expert-tags">
+            <span class="expert-tag">#MBTI검사</span><span class="expert-tag">#NVC비폭력대화</span><span class="expert-tag">#마을공동체</span><span class="expert-tag">#사회복지</span>
+          </div>
+          <div class="expert-expand">
+            <div class="expand-section">
+              <h4>전체 약력</h4>
+              <ul>
+                <li>前 부천상동종합사회복지관 선임복지사</li>
+                <li>前 부천시청 사례관리전문가</li>
+                <li>前 인천부평남초등학교 교육복지사</li>
+                <li>前 서울시 중구청(신당4동) 사회복지사</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>강의 경력</h4>
+              <ul>
+                <li>2007~현재 진로교육/사회복지사 (초·중학교)</li>
+                <li>2011~현재 MBTI 관련 강의 (복지관)</li>
+                <li>2019~현재 마을공동체 이해교육 (지자체)</li>
+                <li>2019~현재 마을활동가 역량강화</li>
+                <li>2015~2016 컴퓨터적사고능력 (과학동아)</li>
+                <li>2010~2016 NVC 비폭력대화 (인천 초등학교)</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>컨설팅 · 위원회</h4>
+              <ul>
+                <li>사회적기업가 육성사업팀 컨설팅</li>
+                <li>MBTI 조직컨설팅 (㈜ 더함)</li>
+                <li>주민공동이용시설 컨설팅</li>
+                <li>마을공동체만들기위원회 (미추홀구·서구)</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>토론회</h4>
+              <ul>
+                <li>마을공동체활성화 토론회 (부평구)</li>
+                <li>마을사업진단 정책토론회 (인천시)</li>
+                <li>마을활동가 지원체계 마련 정책토론회 (인천 서구)</li>
+                <li>자원순환마을실천방안 (인천시교육청)</li>
+              </ul>
+            </div>
+          </div>
+          <button class="expert-toggle-btn" onclick="toggleExpert(this.closest('.expert-card').querySelector('.expert-photo-wrap'))">상세보기 ▼</button>
+        </div>
+      </div>
+
+      <!-- 이용우 -->
+      <div class="expert-card">
+        <div class="expert-photo-wrap" onclick="toggleExpert(this)">
+          <img class="expert-photo" src="images/leeyongoo.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="이용우">
+          <div class="photo-placeholder" style="display:none">이</div>
+        </div>
+        <div class="expert-body">
+          <div class="expert-role">사외이사</div>
+          <div class="expert-name">이용우</div>
+          <ul class="expert-bio-short">
+            <li>現 인천광역시부평구의회 의원</li>
+            <li>前 사단법인 우리동네희망마을 이사장</li>
+            <li>前 여럿이함께하는동네야놀자 사무국장</li>
+            <li>前 한국주민운동교육원 트레이너</li>
+            <li>前 부평구 마을갈등조정단 단장</li>
+          </ul>
+          <div class="expert-tags">
+            <span class="expert-tag">#마을공동체</span><span class="expert-tag">#주민공동이용시설</span><span class="expert-tag">#공동체</span><span class="expert-tag">#주민자치</span>
+          </div>
+          <div class="expert-expand">
+            <div class="expand-section">
+              <h4>전체 약력</h4>
+              <ul>
+                <li>前 산곡1동 주민자치회 위원</li>
+                <li>前 인천 마을만들기위원회 위원</li>
+                <li>前 부평구 마을만들기위원회 위원</li>
+                <li>前 여럿이함께하는동네야놀자 팀장</li>
+                <li>前 실업극복국민운동 부평·서구지원센터</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>강의 경력</h4>
+              <ul>
+                <li>현재~ 주민공동이용시설 사례교육</li>
+              </ul>
+            </div>
+          </div>
+          <button class="expert-toggle-btn" onclick="toggleExpert(this.closest('.expert-card').querySelector('.expert-photo-wrap'))">상세보기 ▼</button>
+        </div>
+      </div>
+
+      <!-- 박흥석 -->
+      <div class="expert-card">
+        <div class="expert-photo-wrap" onclick="toggleExpert(this)">
+          <img class="expert-photo" src="images/parkhungseok.jpg"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="박흥석">
+          <div class="photo-placeholder" style="display:none">박</div>
+        </div>
+        <div class="expert-body">
+          <div class="expert-role">사외이사</div>
+          <div class="expert-name">박흥석</div>
+          <ul class="expert-bio-short">
+            <li>現 인천광역시의회 의원</li>
+            <li>前 경기도의회 정책지원관</li>
+            <li>前 지속가능발전도시포럼 사무국장</li>
+            <li>前 세월호참사특별조사위원회 조사관</li>
+            <li>前 사회적참사특별조사위원회 조사관·팀장</li>
+          </ul>
+          <div class="expert-tags">
+            <span class="expert-tag">#연구조사</span><span class="expert-tag">#연수기획</span><span class="expert-tag">#선진지답사</span><span class="expert-tag">#공론장기획</span>
+          </div>
+          <div class="expert-expand">
+            <div class="expand-section">
+              <h4>전체 약력</h4>
+              <ul>
+                <li>前 희망제작소 선임연구원</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>연구 · 정책제안</h4>
+              <ul>
+                <li>세월호참사 진상규명 법제 및 방안</li>
+                <li>안전사회구현을 위한 방안·제안</li>
+                <li>SDGs 달성을 위한 방안·제안</li>
+              </ul>
+            </div>
+            <div class="expand-section">
+              <h4>기획</h4>
+              <ul>
+                <li>공론장 기획 및 운영</li>
+              </ul>
+            </div>
+          </div>
+          <button class="expert-toggle-btn" onclick="toggleExpert(this.closest('.expert-card').querySelector('.expert-photo-wrap'))">상세보기 ▼</button>
+        </div>
+      </div>
+
+    </div><!-- /experts-grid -->
+    </div><!-- /biz-experts -->
+
+    <!-- 사업소개 -->
+    <div class="biz-sub-section" id="biz-services">
+    <!-- 사업 인포그래픽 -->
+    <div style="width:100%;max-width:940px;margin:0 auto;">
+    <svg viewBox="0 0 900 572" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:'Noto Sans KR',sans-serif;">
+      <defs>
+        <clipPath id="logoClip">
+          <circle cx="450" cy="300" r="103"/>
+        </clipPath>
+      </defs>
+
+      <!-- ── 연결선 ── -->
+      <g stroke="#94A3B8" stroke-width="1.8" fill="none" stroke-dasharray="5,4">
+        <line x1="300" y1="127" x2="380" y2="222"/>
+        <line x1="600" y1="133" x2="520" y2="222"/>
+        <line x1="300" y1="452" x2="380" y2="378"/>
+        <line x1="600" y1="452" x2="520" y2="378"/>
+      </g>
+
+      <!-- ── 중앙 로고 이미지 ── -->
+      <image x="347" y="197" width="206" height="206" href="images/logo.png" clip-path="url(#logoClip)" preserveAspectRatio="xMidYMid meet"/>
+
+      <!-- ══ SERVICE 01 (TL) ══ -->
+      <rect x="4" y="8" width="292" height="238" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <rect x="4" y="8" width="292" height="44" rx="12" fill="#1B3A6B"/>
+      <rect x="4" y="40" width="292" height="12" fill="#1B3A6B"/>
+      <text x="18" y="26" fill="rgba(255,255,255,0.65)" font-size="10" font-weight="600">SERVICE 01</text>
+      <text x="18" y="45" fill="#fff" font-size="14" font-weight="700">맞춤형 교육 및 강의</text>
+      <text x="22" y="76" fill="#374151" font-size="12.5">• 수요자 맞춤형 역량강화 교육 기획·진행</text>
+      <text x="22" y="96" fill="#374151" font-size="12.5">• 인문·사회과학 분야 전문 교육</text>
+      <text x="22" y="116" fill="#374151" font-size="12.5">• 도시재생 / 자활센터 / 주민자치</text>
+      <text x="22" y="136" fill="#374151" font-size="12.5">• 마을공동체 역량강화 교육</text>
+      <text x="22" y="156" fill="#374151" font-size="12.5">• 노동·인권·여성·기후 분야 강의</text>
+      <!-- 태그 행1 -->
+      <rect x="16" y="172" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="50" y="186" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#도시재생</text>
+      <rect x="90" y="172" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="124" y="186" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#주민자치</text>
+      <rect x="164" y="172" width="80" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="204" y="186" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#마을공동체</text>
+      <!-- 태그 행2 -->
+      <rect x="16" y="198" width="72" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="52" y="212" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#사회복지</text>
+      <rect x="94" y="198" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="128" y="212" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#자활센터</text>
+      <rect x="168" y="198" width="96" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="216" y="212" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#협동조합설립</text>
+
+      <!-- ══ SERVICE 02 (TR) ══ -->
+      <rect x="604" y="8" width="292" height="248" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <rect x="604" y="8" width="292" height="44" rx="12" fill="#1B3A6B"/>
+      <rect x="604" y="40" width="292" height="12" fill="#1B3A6B"/>
+      <text x="618" y="26" fill="rgba(255,255,255,0.65)" font-size="10" font-weight="600">SERVICE 02</text>
+      <text x="618" y="45" fill="#fff" font-size="14" font-weight="700">컨설팅 및 자문</text>
+      <text x="622" y="76" fill="#374151" font-size="12.5">• 리빙랩·도시실험 운영 조력</text>
+      <text x="622" y="96" fill="#374151" font-size="12.5">• 주민 주체 지역문제 해결 지원</text>
+      <text x="622" y="116" fill="#374151" font-size="12.5">• 공동체 활성화 컨설팅</text>
+      <text x="622" y="136" fill="#374151" font-size="12.5">• 사회적경제 조직 운영 자문</text>
+      <text x="622" y="156" fill="#374151" font-size="12.5">• 전문가 자문 및 슈퍼비젼</text>
+      <!-- 태그 행1 -->
+      <rect x="616" y="172" width="52" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="642" y="186" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#리빙랩</text>
+      <rect x="674" y="172" width="64" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="706" y="186" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#도시실험</text>
+      <rect x="744" y="172" width="84" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="786" y="186" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#사회적경제</text>
+      <!-- 태그 행2 -->
+      <rect x="616" y="198" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="650" y="212" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#주민자치</text>
+      <rect x="690" y="198" width="64" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="722" y="212" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#주민조직</text>
+      <rect x="760" y="198" width="80" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="800" y="212" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#조직화방법</text>
+      <!-- 태그 행3 -->
+      <rect x="616" y="224" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="650" y="238" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#공모사업</text>
+
+      <!-- ══ SERVICE 03 (BL) ══ -->
+      <rect x="4" y="340" width="292" height="222" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <rect x="4" y="340" width="292" height="44" rx="12" fill="#1B3A6B"/>
+      <rect x="4" y="372" width="292" height="12" fill="#1B3A6B"/>
+      <text x="18" y="358" fill="rgba(255,255,255,0.65)" font-size="10" font-weight="600">SERVICE 03</text>
+      <text x="18" y="377" fill="#fff" font-size="14" font-weight="700">연구 용역 및 아카이빙</text>
+      <text x="22" y="408" fill="#374151" font-size="12.5">• 현황 조사 및 심층 인터뷰</text>
+      <text x="22" y="428" fill="#374151" font-size="12.5">• 선진 사례 연구</text>
+      <text x="22" y="448" fill="#374151" font-size="12.5">• 성과자료집 기획·편집·제작</text>
+      <text x="22" y="468" fill="#374151" font-size="12.5">• 마을 역사 기록 및 아카이빙</text>
+      <text x="22" y="488" fill="#374151" font-size="12.5">• 영상 촬영 및 인터뷰 제작</text>
+      <!-- 태그 행1 -->
+      <rect x="16" y="504" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="50" y="518" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#현황조사</text>
+      <rect x="90" y="504" width="80" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="130" y="518" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#자료집발간</text>
+      <rect x="176" y="504" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="210" y="518" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#아카이빙</text>
+      <!-- 태그 행2 -->
+      <rect x="16" y="530" width="72" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="52" y="544" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#영상촬영</text>
+      <rect x="94" y="530" width="60" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="124" y="544" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#인터뷰</text>
+
+      <!-- ══ SERVICE 04 (BR) ══ -->
+      <rect x="604" y="340" width="292" height="222" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+      <rect x="604" y="340" width="292" height="44" rx="12" fill="#1B3A6B"/>
+      <rect x="604" y="372" width="292" height="12" fill="#1B3A6B"/>
+      <text x="618" y="358" fill="rgba(255,255,255,0.65)" font-size="10" font-weight="600">SERVICE 04</text>
+      <text x="618" y="377" fill="#fff" font-size="14" font-weight="700">행사기획 서비스</text>
+      <text x="622" y="408" fill="#374151" font-size="12.5">• 축제·행사·컨벤션 기획 및 대행</text>
+      <text x="622" y="428" fill="#374151" font-size="12.5">• 네트워크 구축 및 운영</text>
+      <text x="622" y="448" fill="#374151" font-size="12.5">• 연수·워크숍 프로그램 운영</text>
+      <text x="622" y="468" fill="#374151" font-size="12.5">• 해외연수·벤치마킹 기획</text>
+      <text x="622" y="488" fill="#374151" font-size="12.5">• 전시·공론장 기획 및 운영</text>
+      <!-- 태그 행1 -->
+      <rect x="616" y="504" width="80" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="656" y="518" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#네트워크구축</text>
+      <rect x="702" y="504" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="736" y="518" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#행사기획</text>
+      <rect x="776" y="504" width="80" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="816" y="518" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#선진지견학</text>
+      <!-- 태그 행2 -->
+      <rect x="616" y="530" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="650" y="544" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#축제기획</text>
+      <rect x="690" y="530" width="68" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="724" y="544" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#해외연수</text>
+      <rect x="764" y="530" width="72" height="20" rx="10" fill="#DBEAFE"/>
+      <text x="800" y="544" text-anchor="middle" fill="#1D4ED8" font-size="10.5" font-weight="600">#벤치마킹</text>
+
+    </svg>
+    </div><!-- /biz-infographic -->
+    </div><!-- /biz-services -->
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">CONTACT</div>
+      <h2 class="section-title">문의하기</h2>
+      <p class="section-desc">강의 의뢰, 컨설팅 상담, 연구 용역 등 어떤 내용이든 편하게 남겨주세요.</p>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info-box">
+        <h3>연락처 안내</h3>
+        <p>오른쪽 폼을 작성하여 다운로드한 파일을 아래 이메일 주소로 보내주시면 빠르게 답변드리겠습니다.</p>
+        <div class="contact-detail">
+          <div class="cd-icon">✉️</div>
+          <div class="cd-text">
+            <div class="cd-label">대표 이메일</div>
+            <div class="cd-value"><a href="mailto:utnc1025@gmail.com">utnc1025@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📍</div>
+          <div class="cd-text">
+            <div class="cd-label">소재지</div>
+            <div class="cd-value">인천광역시 부평구 수변로 56, 102호<br>(부평사회적경제마을센터 1층 코워킹룸)</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">🏦</div>
+          <div class="cd-text">
+            <div class="cd-label">입금 계좌 (교육비·용역비)</div>
+            <div class="cd-value">신한은행 140-015-330905<br>예금주: 어반교육컨설팅협동조합 나지현</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <h3>강의 요청 및 용역 의뢰</h3>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>기관/단체명 <span class="req">*</span></label>
+              <input type="text" name="org" placeholder="기관 또는 단체명" required>
+            </div>
+            <div class="form-group">
+              <label>담당자 성명 및 직책 <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="홍길동 / 과장" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>연락처 <span class="req">*</span></label>
+              <input type="text" name="phone" placeholder="010-0000-0000" required>
+            </div>
+            <div class="form-group">
+              <label>이메일 <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="email@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>의뢰 분야 (복수 선택 가능)</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" name="field" value="강의 및 교육"><span>강의 및 교육 (도시재생, 마을공동체, 리더십, 사회적경제 등)</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="field" value="컨설팅 및 자문"><span>컨설팅 및 자문 (리빙랩 도시실험, 주민조직화 등)</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="field" value="연구 용역 및 자료집"><span>연구 용역 및 성과자료집 발간</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="field" value="선진지 견학 및 워크숍"><span>선진지 견학, 워크숍 기획 및 운영</span></label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>희망 일정 및 장소</label>
+              <input type="text" name="schedule" placeholder="예) 2025년 9월 / 인천">
+            </div>
+            <div class="form-group">
+              <label>참여 대상 및 예상 인원</label>
+              <input type="text" name="participants" placeholder="예) 주민자치위원 / 30명">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>배정 예산 규모 (선택)</label>
+            <select name="budget">
+              <option value="">선택 안 함</option>
+              <option>500만원 미만</option>
+              <option>1,000만원 미만</option>
+              <option>3,000만원 미만</option>
+              <option>5,000만원 미만</option>
+              <option>1억원 미만</option>
+              <option>1억원 이상</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>세부 요청 내용</label>
+            <textarea name="details" placeholder="교육/컨설팅 내용, 목적, 기타 요청 사항을 자유롭게 작성해 주세요."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">📄 문의서 다운로드</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fb-logo">어반교육컨설팅협동조합</div>
+      <div class="fb-en">Urban Community Teaching &amp; Consulting</div>
+      <p>시민의 일상이 도시를 바꾸는 힘,<br>어반교육컨설팅협동조합이 함께합니다.</p>
+    </div>
+    <div class="footer-info">
+      <div class="footer-info-grid">
+        <div class="fi-item">
+          <div class="fi-label">대표자</div>
+          <div class="fi-value">나지현</div>
+        </div>
+        <div class="fi-item">
+          <div class="fi-label">사업자등록번호</div>
+          <div class="fi-value">316-86-03304</div>
+        </div>
+        <div class="fi-item">
+          <div class="fi-label">법인등록번호</div>
+          <div class="fi-value">120151-0038982</div>
+        </div>
+        <div class="fi-item">
+          <div class="fi-label">소재지</div>
+          <div class="fi-value">인천광역시 부평구 수변로 56, 102호</div>
+        </div>
+        <div class="fi-item">
+          <div class="fi-label">업종</div>
+          <div class="fi-value">교육서비스업 · 사업시설 관리<br>사업지원 및 임대서비스업 · 축제기획 및 추진</div>
+        </div>
+        <div class="fi-item">
+          <div class="fi-label">이메일</div>
+          <div class="fi-value"><a href="mailto:utnc1025@gmail.com" style="color:rgba(255,255,255,0.6);">utnc1025@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 어반교육컨설팅협동조합. All rights reserved.</p>
+    <p>주요 종목: 교육관련 자문 및 평가업, 전시·컨벤션 및 행사 대행업</p>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">↑</button>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+// Scroll functions
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const offset = 76;
+  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+// 강사 카드 펼치기/접기
+function toggleExpert(photoWrap) {
+  const card = photoWrap.closest('.expert-card');
+  const expand = card.querySelector('.expert-expand');
+  const btn = card.querySelector('.expert-toggle-btn');
+  const isOpen = photoWrap.classList.contains('open');
+  if (isOpen) {
+    photoWrap.classList.remove('open');
+    expand.style.display = 'none';
+    btn.textContent = '상세보기 ▼';
+  } else {
+    photoWrap.classList.add('open');
+    expand.style.display = 'block';
+    btn.textContent = '접기 ▲';
+    setTimeout(() => expand.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+}
+
+// Sub-section navigation (Business)
+function showBizSection(name) {
+  document.querySelectorAll('.biz-sub-section').forEach(el => el.classList.remove('active'));
+  document.getElementById('biz-' + name).classList.add('active');
+  const btns = document.querySelectorAll('#biz-subnav .sub-nav-btn');
+  const map = { experts: 0, services: 1 };
+  btns.forEach(b => b.classList.remove('active'));
+  if (btns[map[name]]) btns[map[name]].classList.add('active');
+}
+
+// Sub-section navigation (About)
+function showSubSection(name) {
+  document.querySelectorAll('.sub-section').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.sub-nav-btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById('sub-' + name).classList.add('active');
+  const btns = document.querySelectorAll('.sub-nav-btn');
+  const map = { greeting: 0, history: 1, org: 2, location: 3 };
+  if (btns[map[name]]) btns[map[name]].classList.add('active');
+}
+
+// Navbar scroll behavior
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+
+  // Scroll to top button
+  const btn = document.getElementById('scroll-top');
+  btn.classList.toggle('visible', window.scrollY > 400);
+
+  // Active nav link
+  const sections = ['home', 'about', 'business', 'contact'];
+  const links = document.querySelectorAll('.nav-menu a');
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  links.forEach((link, i) => {
+    link.classList.toggle('active', sections[i] === current);
+  });
+});
+
+// Contact form → Word(.doc) download
+function submitForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const d = new FormData(form);
+  const get = (k) => d.get(k) || '-';
+  const fields = [...d.getAll('field')];
+  const fieldStr = fields.length ? fields.join(', ') : '-';
+  const today = new Date().toLocaleDateString('ko-KR');
+
+  const html = `
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<style>
+  body { font-family: '맑은 고딕', Arial, sans-serif; font-size: 11pt; margin: 40px; }
+  h1 { font-size: 18pt; color: #1B3A6B; border-bottom: 2px solid #1B3A6B; padding-bottom: 8px; }
+  h2 { font-size: 12pt; color: #1B3A6B; margin-top: 20px; margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  td { padding: 7px 10px; border: 1px solid #ccc; font-size: 10.5pt; vertical-align: top; }
+  td:first-child { width: 140px; background: #EFF6FF; font-weight: bold; color: #1B3A6B; }
+  .note { font-size: 9pt; color: #555; margin-top: 24px; border-top: 1px solid #ddd; padding-top: 10px; }
+</style>
+</head>
+<body>
+<h1>강의 요청 및 용역 의뢰서</h1>
+<p style="color:#555;font-size:9.5pt;">작성일: ${today} &nbsp;|&nbsp; 수신: 어반교육컨설팅협동조합 (utnc1025@gmail.com)</p>
+
+<h2>■ 의뢰 기관 정보</h2>
+<table>
+  <tr><td>기관/단체명</td><td>${get('org')}</td></tr>
+  <tr><td>담당자 성명·직책</td><td>${get('name')}</td></tr>
+  <tr><td>연락처</td><td>${get('phone')}</td></tr>
+  <tr><td>이메일</td><td>${get('email')}</td></tr>
+</table>
+
+<h2>■ 의뢰 내용</h2>
+<table>
+  <tr><td>의뢰 분야</td><td>${fieldStr}</td></tr>
+  <tr><td>희망 일정·장소</td><td>${get('schedule')}</td></tr>
+  <tr><td>참여 대상·인원</td><td>${get('participants')}</td></tr>
+  <tr><td>예산 규모</td><td>${get('budget') || '-'}</td></tr>
+  <tr><td>세부 요청 내용</td><td style="white-space:pre-wrap;">${get('details')}</td></tr>
+</table>
+
+<p class="note">본 문의서를 작성하신 후 <strong>utnc1025@gmail.com</strong> 으로 발송해 주시면 빠르게 답변드리겠습니다.<br>어반교육컨설팅협동조합 드림</p>
+</body></html>`;
+
+  const blob = new Blob(['﻿' + html], { type: 'application/msword;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `어반교육컨설팅_문의서_${today.replace(/\./g,'').replace(/ /g,'')}.doc`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
